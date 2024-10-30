@@ -24,7 +24,7 @@ def get_llm(model: str):
     env_key = "LLM_MODEL_CONFIG_" + model
     env_value = os.environ.get(env_key)
     logging.info("Model: {}".format(env_key))
-    
+    logging.info("Model Value: {}".format(env_value))    
     if "gemini" in model:
         model_name = env_value
         credentials, project_id = google.auth.default()
